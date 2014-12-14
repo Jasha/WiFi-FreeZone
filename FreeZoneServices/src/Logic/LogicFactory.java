@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class LogicFactory {
 	private static final String Driver= "com.mysql.jdbc.Driver";
-	private static final String DBURL= "jdbc:mysql://localhost/FreeZoneDB";
+	private static final String DBURL= "jdbc:mysql://localhost/freezonedb";
 	private static final String dbuser= "root";
 	private static final String dbpass= "";
 	
@@ -30,6 +30,10 @@ public class LogicFactory {
 	
 	public static TestLogic getTestLogic() {
 		return new TestLogic(connection);
+	}
+	
+	public static NetworkLogic getNetworkLogic() {
+		return new NetworkLogic(connection);
 	}
 
 }
