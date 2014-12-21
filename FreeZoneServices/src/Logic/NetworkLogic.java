@@ -19,7 +19,7 @@ public class NetworkLogic {
 	public int createNetwork(Network network) throws SQLException {
 		PreparedStatement psCreate;
 		int result = 0;
-		psCreate = _connection.prepareStatement("INSERT INTO network (SSID, Password, Latitude, Longitude, Validity) VALUES (?, ?, ?, ?, ?");
+		psCreate = _connection.prepareStatement("INSERT INTO network (SSID, Password, Latitude, Longitude, Validity) VALUES (?, ?, ?, ?, ?)");
 		psCreate.setString(1, network.getSSID());
 		psCreate.setString(2, network.getPassword());
 		psCreate.setString(3, network.getLatitude());

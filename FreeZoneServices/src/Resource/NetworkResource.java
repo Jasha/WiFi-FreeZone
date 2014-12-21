@@ -19,6 +19,7 @@ import java.util.List;
 
 import Logic.LogicFactory;
 import Model.Network;
+import Model.Test;
 
 @Path("networks")
 public class NetworkResource {
@@ -36,5 +37,15 @@ public class NetworkResource {
 		List<Network> networks = LogicFactory.getNetworkLogic().getAllNetworks();
 		LogicFactory.Disconnect();
 		return new GenericEntity<List<Network>>(networks) {};
+	}
+	
+	@PUT
+	@Path("shareNetwork")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void createTest(Network network) throws Exception {
+		LogicFactory.Connect();
+		LogicFactory.getNetworkLogic().createNetwork(network);
+		LogicFactory.Disconnect();
 	}
 }
