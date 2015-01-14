@@ -45,7 +45,9 @@ public class NetworkResource {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void createTest(Network network) throws Exception {
 		LogicFactory.Connect();
+		System.out.println("Hi!");
 		LogicFactory.getNetworkLogic().createNetwork(network);
+		System.out.println("Hi2!");
 		LogicFactory.Disconnect();
 	}
 }
